@@ -1,5 +1,6 @@
 import React from 'react';
 import { If, For } from 'react-extras';
+import { useDrag } from 'react-dnd'
 
 import { Container, Label } from './styles';
 
