@@ -1,17 +1,20 @@
 import React from 'react';
+import { If, For } from 'react-extras';
 
 import { Container, Label } from './styles';
 
-export default function Card() {
+export default function Card({ data: card }) {
   return (
     <Container>
       <header>
-        <Label color="#7159c1" />
+        <For of={card.labels} render={label => <Label key={label} color={label} /> } />
       </header>
       
-      <p>Fazer a migração completa do servidor</p>
+      <p>{card.content}</p>
 
-      <img src="https://avatars0.githubusercontent.com/u/20430611?s=460&v=4" alt="User Profile Picture" />
+      <If condition={card.user}>
+        <img src={card.user} alt="User" />
+      </If>
     </Container>
   );
 }
