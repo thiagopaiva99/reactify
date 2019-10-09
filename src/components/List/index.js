@@ -4,6 +4,8 @@ import { MdAdd } from 'react-icons/md'
 
 import { Container } from './styles';
 
+import Card from '../Card'
+
 export default function List() {
   return (
     <Container>
@@ -13,6 +15,14 @@ export default function List() {
           <MdAdd size={24} color="#fff" />
         </button>
       </header>
+
+      <ul>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </ul>
     </Container>
   );
 }
