@@ -5,8 +5,17 @@ import { useDrag } from 'react-dnd'
 import { Container, Label } from './styles';
 
 export default function Card({ data: card }) {
+  const [{ isDragging }, dragRef] = useDrag({
+    item: {
+      type: 'CARD'
+    },
+    collect: monitor => ({
+      isDragging: monitor.isDragging
+    })
+  })
+
   return (
-    <Container>
+    <Container ref={dragRef}>
       <header>
         <For of={card.labels} render={label => <Label key={label} color={label} /> } />
       </header>
