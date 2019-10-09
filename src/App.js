@@ -6,13 +6,14 @@ import Board from './components/Board';
 
 function App() {
   return (
-    <main>
+    <>
       <GlobalStyles />
 
-      <Header />
-
-      <Board />
-    </main>
+      <main>
+        <Header />
+        <Board />
+      </main>
+    </>
   );
 }
 
