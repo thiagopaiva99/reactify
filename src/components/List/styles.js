@@ -30,4 +30,8 @@ export const Container = styled.div`
         border: 0;
       }
   }
+
+  ul {
+      margin-top: 30px;
+  }
 `;
