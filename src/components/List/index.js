@@ -9,7 +9,7 @@ import Card from '../Card'
 
 export default function List({ data: list }) {
   return (
-    <Container>
+    <Container done={list.done}>
       <header>
         <h2>{ list.title }</h2>
         
