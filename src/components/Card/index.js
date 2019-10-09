@@ -10,12 +10,12 @@ export default function Card({ data: card }) {
       type: 'CARD'
     },
     collect: monitor => ({
-      isDragging: monitor.isDragging
+      isDragging: monitor.isDragging()
     })
   })
 
   return (
-    <Container ref={dragRef}>
+    <Container ref={dragRef} isDragging={isDragging}>
       <header>
         <For of={card.labels} render={label => <Label key={label} color={label} /> } />
       </header>
