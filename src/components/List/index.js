@@ -21,7 +21,7 @@ export default function List({ data: list }) {
       </header>
 
       <ul>
-        <For of={list.cards} render={card => <Card key={card.id} data={card} /> } />
+        <For of={list.cards} render={(card, index) => <Card key={card.id} index={index} data={card} /> } />
       </ul>
     </Container>
   );
