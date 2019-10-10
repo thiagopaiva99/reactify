@@ -7,7 +7,7 @@ import { Container } from './styles';
 
 import Card from '../Card'
 
-export default function List({ data: list }) {
+export default function List({ data: list, index: listIndex }) {
   return (
     <Container done={list.done}>
       <header>
@@ -21,7 +21,13 @@ export default function List({ data: list }) {
       </header>
 
       <ul>
-        <For of={list.cards} render={(card, index) => <Card key={card.id} index={index} data={card} /> } />
+        <For of={list.cards} render={(card, index) => (
+          <Card 
+            key={card.id} 
+            index={index} 
+            listIndex={listIndex} 
+            data={card} />
+          )} />
       </ul>
     </Container>
   );
